@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>AGAH</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    height: 100vh;
+    background: url('https://i.pinimg.com/736x/83/51/60/8351601f42dff5c6d6f1d99623adf20c.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* ENTER ekranı */
+#enterScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    cursor: pointer;
+    letter-spacing: 5px;
+}
+
+/* ana içerik */
+#main {
+    display: none;
+    text-align: center;
+}
+
+/* ana yazı */
+h1 {
+    font-size: 65px;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px black;
+    animation: glow 1.5s infinite alternate, shake 0.5s infinite;
+}
+
+/* alt yazı (artık net görünüyo) */
+.alt {
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    opacity: 1;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px black;
+    animation: fade 2.5s ease-in-out infinite alternate;
+}
+
+/* glow */
+@keyframes glow {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 30px red, 0 0 60px black; }
+}
+
+/* titreme */
+@keyframes shake {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, 2px); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, -2px); }
+}
+
+/* fade */
+@keyframes fade {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="enterScreen" onclick="enterSite()">
+    ENTER...
+</div>
+
+<div id="main">
+    <h1>! A G A H UĞRADI †</h1>
+    <p class="alt">ya seve seve ya sike sike biat edeceksiniz</p>
+</div>
+
+<!-- Spotify müzik -->
+<iframe 
+id="music"
+style="display:none"
+src="https://open.spotify.com/embed/track/0yk0ImdBjo1MT5nDYSCiCN"
+frameborder="0"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+<script>
+function enterSite() {
+    document.getElementById("enterScreen").style.display = "none";
+    document.getElementById("main").style.display = "block";
+
+    document.getElementById("music").style.display = "block";
+}
+</script>
+
+</body>
+</html>
